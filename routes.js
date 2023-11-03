@@ -31,4 +31,30 @@ router.route('/experience') // define the experience route
     .delete((req, res) => {
         res.send('Experience birds')
     })
-router.route('/abilidades')
+router.route('/habilidades') // define the habilidades route
+    .get((req, res) => {
+        res.send('Habilidades birds')
+    })
+    .post((req, res) => {
+        res.send('Habilidades birds')
+    })
+    .put((req, res) => {
+        res.send('Habilidades birds')
+    })
+    .delete((req, res) => {
+        res.send('Habilidades birds')
+    })
+router.route('/proyectos') // define the proyectos route
+    .get((req, res) => {
+        res.send('Proyectos birds')
+    })
+    .post((req, res) => {
+        res.send('Proyectos birds')
+    })
+    .put((req, res) => {
+        res.send('Proyectos birds')
+    })
+    .delete((req, res) => {
+        res.send('Proyectos birds')
+    })
+router.route('/contacto') // define th

@@ -4,7 +4,7 @@ const router = express.Router() // create a new router
 
 router.get('/', (req, res) => { // define the home page route
     res.send('Birds home page')
-    }),
+    })
 router.route('/about') // define the about route
     .get((req, res) => {
         res.send('About birds')
@@ -31,7 +31,7 @@ router.route('/experience') // define the experience route
     .delete((req, res) => {
         res.send('Experience birds')
     })
-router.route('/habilidades') // define the habilidades route
+router.route('/skills') // define the habilidades route
     .get((req, res) => {
         res.send('Habilidades birds')
     })
@@ -44,7 +44,7 @@ router.route('/habilidades') // define the habilidades route
     .delete((req, res) => {
         res.send('Habilidades birds')
     })
-router.route('/proyectos') // define the proyectos route
+router.route('/project') // define the proyectos route
     .get((req, res) => {
         res.send('Proyectos birds')
     })
@@ -57,4 +57,3 @@ router.route('/proyectos') // define the proyectos route
     .delete((req, res) => {
         res.send('Proyectos birds')
     })
-router.route('/contacto') // define th

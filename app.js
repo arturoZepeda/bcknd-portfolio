@@ -1,26 +1,16 @@
+
 const express = require('express')
 const app = express()
 const port = 3000
 
-app.routes = require('./routes')
+const aboutRoute =require( './routes/aboutRoute');
 
+app.use('/about', aboutRoute); // Monta la ruta en '/about'
 
 app.get('/', (req, res) => { // define the home page route
   res.send('Birds home page')
   })
-app.route('/about') // define the about route
-  .get((req, res) => {
-      res.send('About birds')
-  })
-  .post((req, res) => {
-      res.send('About birds')
-  })
-  .put((req, res) => {
-      res.send('About birds')
-  })
-  .delete((req, res) => {
-      res.send('About birds')
-  })
+
 app.route('/experience') // define the experience route
   .get((req, res) => {
       res.send('Experience birds')

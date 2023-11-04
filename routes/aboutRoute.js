@@ -1,18 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
+const aboutController = require('../controllers/aboutController');
+const aboutCont = new aboutController();
 router.route('/')
-  .get((req, res) => {
-      res.send('About birds')
-  })
-  .post((req, res) => {
-      res.send('About birds')
-  })
-  .put((req, res) => {
-      res.send('About birds')
-  })
-  .delete((req, res) => {
-      res.send('About birds')
-  })
+  .get(this.aboutCont.getAbout)
+  .post(this.aboutCont.postAbout)
+  .put(this.aboutCont.putAbout)
+  .delete(this.aboutCont.deleteAbout)
 
   module.exports = router;

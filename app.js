@@ -1,8 +1,9 @@
-
+const mongoose = require('mongoose');
 const express = require('express')
 const app = express()
 const port = 3000
 
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/curriculum', { useNewUrlParser: true, useUnifiedTopology: true });
 const aboutRoute =require('./routes/aboutRoute');
 const experienceRoute =require('./routes/experienceRoute');
 

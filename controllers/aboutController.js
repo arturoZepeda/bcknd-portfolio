@@ -11,43 +11,55 @@ const About = mongoose.model('About', aboutSchema);
         this.res = res;
     }
 
-     postAbout (req, res) {                
+    postAbout (req, res) {                
         let newAbout = new About(req.body);
     
-        newAbout.save((err, about) => {
-            if(err){
+        newAbout.save()
+            .then((about) => {
+                res.json(about);
+            })
+            .catch((err) => {
                 res.send(err);
-            }    
-            res.json(about);
-        });
-        return this.res;
+            });
     }
-    getAbout (req, res) {           
-        About.find({}, (err, about) => {
-            if(err){
+    getAbout (req, res) {
+        console.log(req.params.aboutId);
+        if (req.params.aboutId) {
+            About.findById(req.params.aboutId)
+                .then((about) => {
+                    res.json(about);
+                })
+                .catch((err) => {
+                    res.send(err);
+                });
+        }
+        else {
+        About.find({}).exec()
+            .then((about) => {
+                res.json(about);
+            })
+            .catch((err) => {
                 res.send(err);
-            }
-            res.json(about);
-        });
-        return this.res;
+            });
+        }
     }
-    putAbout (req, res) {           
-        About.findOneAndUpdate({ _id: req.params.aboutId }, req.body, { new: true }, (err, about) => {
-            if(err){
+    putAbout (req, res) {                
+        About.findOneAndUpdate({}, req.body, {new: true})
+            .then((about) => {
+                res.json(about);
+            })
+            .catch((err) => {
                 res.send(err);
-            }
-            res.json(about);
-        });
-        return this.res;
+            });
     }
     deleteAbout (req, res) {        
-        About.remove({ _id: req.params.aboutId }, (err, about) => {
-            if(err){
+        About.deleteOne({ _id: req.params.aboutId })
+            .then(() => {
+                res.json({ message: 'Se ha eliminado de manera exitosa!'});
+            })
+            .catch((err) => {
                 res.send(err);
-            }
-            res.json({ message: 'Se ha eliminado de manera exitosa!'});
-        });
-        return this.res;
+            });
     }
 }
 module.exports = AboutController;

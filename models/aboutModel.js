@@ -34,3 +34,5 @@ const aboutSchema = new Schema({
         required: 'Ingrese su identificador'
     }
 });
+
+module.exports = aboutSchema;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const aboutSchema = new Schema({
+const experienceSchema = new Schema({
     titulo: {
         type: String,
         required: 'Ingrese su titulo'
@@ -43,3 +43,5 @@ const aboutSchema = new Schema({
         required: 'Ingrese su identificador'
     }
 });
+
+module.exports = experienceSchema;

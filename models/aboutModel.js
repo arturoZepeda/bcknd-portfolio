@@ -29,5 +29,8 @@ const aboutSchema = new Schema({
         type: Number,
         required: 'Ingrese su telefono'
     },
-
+    identificador: {
+        type: String,
+        required: 'Ingrese su identificador'
+    }
 });

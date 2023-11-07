@@ -1,18 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const experienceController = require('../controllers/experienceController');
+const experienceCont = new experienceController();
 
 router.route('/') // define the experience route
-  .get((req, res) => {
-      res.send('Experience birds')
-  })
-  .post((req, res) => {
-      res.send('Experience birds')
-  })
-  .put((req, res) => {
-      res.send('Experience birds')
-  })
-  .delete((req, res) => {
-      res.send('Experience birds')
-  })
+  .get(experienceCont.getExperience)
+  .post(experienceCont.postExperience)
+  .put(experienceCont.putExperience)
+  .delete(experienceCont.deleteExperience)
 
 module.exports = router;

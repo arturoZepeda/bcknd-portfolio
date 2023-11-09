@@ -101,7 +101,7 @@ Agrega un proyecto.
 
 
 // Ejemplo de instancia de experienceModel
-´´´ javascript
+``` javascript
 const experience = new experienceModel({
     puesto: 'Desarrollador web',
     empresa: 'Acme Inc.',
@@ -138,4 +138,4 @@ const skills = new skillsModel({
     descripcion: 'Conocimiento avanzado de HTML.',
     fechaDesde: new Date('2020-01-01')
 });
-´´´
+```

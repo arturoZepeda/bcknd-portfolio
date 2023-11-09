@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express')
 require('dotenv').config();
 const app = express()
-const port = 3000
+const port = 3001
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Produccion');
 const aboutRoute =require('./routes/aboutRoute');

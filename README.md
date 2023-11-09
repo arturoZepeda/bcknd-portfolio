@@ -98,3 +98,44 @@ Agrega un proyecto.
 
 **Respuesta**
 - 200 OK en caso de éxito
+
+
+// Ejemplo de instancia de experienceModel
+´´´ javascript
+const experience = new experienceModel({
+    puesto: 'Desarrollador web',
+    empresa: 'Acme Inc.',
+    descripcion: 'Desarrollo de aplicaciones web utilizando HTML, CSS y JavaScript.',
+    fechaDesde: new Date('2020-01-01'),
+    fechaHasta: new Date('2021-01-01')
+});
+
+// Ejemplo de instancia de projectModel
+const project = new projectModel({
+    nombre: 'Sitio web de comercio electrónico',
+    descripcion: 'Desarrollo de un sitio web de comercio electrónico utilizando Node.js, Express y MongoDB.',
+    tecnologias: ['Node.js', 'Express', 'MongoDB', 'HTML', 'CSS', 'JavaScript'],
+    fechaDesde: new Date('2021-01-01'),
+    fechaHasta: new Date('2021-06-01'),
+    url: 'https://example.com'
+});
+
+// Ejemplo de instancia de aboutModel
+const about = new aboutModel({
+    nombre: 'Juan',
+    apellido: 'Pérez',
+    titulo: ['Desarrollador web', 'Diseñador gráfico'],
+    descripcion: 'Soy un desarrollador web y diseñador gráfico con experiencia en HTML, CSS, JavaScript y Photoshop.',
+    correo: 'juan.perez@example.com',
+    telefono: 1234567890,
+    identificador: 'juanperez123'
+});
+
+// Ejemplo de instancia de skillsModel
+const skills = new skillsModel({
+    nombre: 'HTML',
+    porcentaje: 90,
+    descripcion: 'Conocimiento avanzado de HTML.',
+    fechaDesde: new Date('2020-01-01')
+});
+´´´

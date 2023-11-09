@@ -10,7 +10,7 @@ const skillsSchema = new Schema({
         type: Number,
         required: true
     },
-    tipo:{
+    descripcion:{
         type: String,
         required: true
     },

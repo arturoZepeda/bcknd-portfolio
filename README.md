@@ -99,9 +99,8 @@ Agrega un proyecto.
 **Respuesta**
 - 200 OK en caso de éxito
 
-
-// Ejemplo de instancia de experienceModel
 ``` javascript
+// Ejemplo de instancia de experienceModel
 const experience = new experienceModel({
     puesto: 'Desarrollador web',
     empresa: 'Acme Inc.',

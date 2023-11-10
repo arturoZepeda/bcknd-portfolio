@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const express = require('express')
 require('dotenv').config();
 //require('dotenv').config({path:"./.ENV"});
-console.log(process.env);
 const app = express();
 const port = 3000;
 console.log(process.env.MONGODB_URI);
@@ -10,7 +9,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Produccio
 const aboutRoute =require('./routes/aboutRoute');
 const experienceRoute =require('./routes/experienceRoute');
 app.use(express.json());
-app.use('/about', aboutRoute); // Monta la ruta en '/about'
+app.use('/about/', aboutRoute); // Monta la ruta en '/about'
 app.use('/experience', experienceRoute); // Monta la ruta en '/experience'
 app.use('/skills', require('./routes/skillsRoute')); // Monta la ruta en '/skills'
 app.use('/projects', require('./routes/projectsRoute')); // Monta la ruta en '/projects'

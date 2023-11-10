@@ -23,7 +23,8 @@ const About = mongoose.model('About', aboutSchema);
             });
     }
     getAbout (req, res) {
-        console.log(req.params.aboutId);
+	    console.log(req.params);
+	    console.log(req.params.aboutId);
         if (req.params.aboutId) {
             About.findById(req.params.aboutId)
                 .then((about) => {

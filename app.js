@@ -3,7 +3,7 @@ const express = require('express')
 require('dotenv').config();
 const app = express();
 const port = 3000;
-
+console.log(process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Produccion');
 const aboutRoute =require('./routes/aboutRoute');
 const experienceRoute =require('./routes/experienceRoute');

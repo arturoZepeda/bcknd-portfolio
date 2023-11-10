@@ -25,3 +25,4 @@ dist-ssr
 
 # Server credentials
 .ENV
+.env

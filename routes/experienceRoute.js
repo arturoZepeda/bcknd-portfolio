@@ -3,7 +3,7 @@ const router = express.Router();
 const experienceController = require('../controllers/experienceController');
 const experienceCont = new experienceController();
 
-router.route('/') // define the experience route
+router.route('/:experienceId?') // define the experience route
   .get(experienceCont.getExperience)
   .post(experienceCont.postExperience)
   .put(experienceCont.putExperience)

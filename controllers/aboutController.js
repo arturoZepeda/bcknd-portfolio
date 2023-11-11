@@ -1,19 +1,15 @@
 const aboutSchema = require( '../models/aboutModel');
 const mongoose = require('mongoose');
 
-
 const About = mongoose.model('About', aboutSchema);
 
  class AboutController{
-
     constructor(req, res) {
         this.req = req;
         this.res = res;
     }
-
     postAbout (req, res) {                
         let newAbout = new About(req.body);
-    
         newAbout.save()
             .then((about) => {
                 res.json(about);

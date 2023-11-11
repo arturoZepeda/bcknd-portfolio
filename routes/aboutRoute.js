@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router({mergeParams: true});
+const router = express.Router();
 const aboutController = require('../controllers/aboutController');
 const aboutCont = new aboutController();
 router.route('/:aboutId?')

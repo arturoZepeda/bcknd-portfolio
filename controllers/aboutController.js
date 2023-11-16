@@ -1,19 +1,15 @@
 const aboutSchema = require( '../models/aboutModel');
 const mongoose = require('mongoose');
 
-
 const About = mongoose.model('About', aboutSchema);
 
  class AboutController{
-
     constructor(req, res) {
         this.req = req;
         this.res = res;
     }
-
     postAbout (req, res) {                
         let newAbout = new About(req.body);
-    
         newAbout.save()
             .then((about) => {
                 res.json(about);
@@ -23,10 +19,10 @@ const About = mongoose.model('About', aboutSchema);
             });
     }
     getAbout (req, res) {
-	    console.log(req.params);
-	    console.log(req.params.aboutId);
-        if (req.params.aboutId) {
-            About.findById(req.params.aboutId)
+	    console.log(req.query);
+	    console.log(req.query.aboutId);
+        if (req.query.aboutId) {
+            About.findById(req.query.aboutId)
                 .then((about) => {
                     res.json(about);
                 })
@@ -44,8 +40,12 @@ const About = mongoose.model('About', aboutSchema);
             });
         }
     }
-    putAbout (req, res) {                
-        About.findOneAndUpdate({}, req.body, {new: true})
+    putAbout(req, res) {
+        About.findOneAndUpdate(
+            { _id: req.query.aboutId },
+            req.body,
+            { new: true }
+        )
             .then((about) => {
                 res.json(about);
             })

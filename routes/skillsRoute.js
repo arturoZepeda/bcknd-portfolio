@@ -3,7 +3,7 @@ const router = express.Router();
 const skillsController = require('../controllers/skillsController');
 const skillsCont = new skillsController();
 
-router.route('/') // define the habilidades route
+router.route('/:skillsId?') // define the habilidades route
   .get(skillsCont.getSkills)
   .post(skillsCont.postSkills)
   .put(skillsCont.putSkills)

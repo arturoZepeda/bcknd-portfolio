@@ -11,7 +11,6 @@ class SkillsController{
     }
     postSkills (req, res) {
         let newSkills = new Skills(req.body);
-    
         newSkills.save()
             .then((skills) => {
                 res.json(skills);
@@ -21,8 +20,8 @@ class SkillsController{
             });
     }
     getSkills (req, res) {
-        if (req.params.skillsId) {
-            Skills.findById(req.params.skillsId)
+        if (req.query.skillsId) {
+            Skills.findById(req.query.skillsId)
                 .then((skills) => {
                     res.json(skills);
                 })
@@ -41,7 +40,11 @@ class SkillsController{
         }
     }
     putSkills (req, res) {
-        Skills.findOneAndUpdate({}, req.body, {new: true})
+        Skills.findOneAndUpdate(
+            { _id: req.query.skillsId },
+            req.body,
+            { new: true }
+        )
         .then((skills) => {
             res.json(skills);
         })

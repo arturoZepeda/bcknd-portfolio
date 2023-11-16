@@ -19,9 +19,9 @@ class ExperienceController {
             });
     }
     getExperience(req, res) {
-        console.log(req.params.experienceId);
-        if (req.params.experienceId) {
-            Experience.findById(req.params.experienceId)
+        console.log(req.query.experienceId);
+        if (req.query.experienceId) {
+            Experience.findById(req.query.experienceId)
                 .then((experience) => {
                     res.json(experience);
                 })
@@ -40,7 +40,11 @@ class ExperienceController {
         }
     }
     putExperience(req, res) {
-        Experience.findOneAndUpdate({}, req.body, {new: true})
+        Experience.findOneAndUpdate(
+            { _id: req.query.experienceId },
+            req.body,
+            { new: true }
+        )
         .then((experience) => {
             res.json(experience);
         })

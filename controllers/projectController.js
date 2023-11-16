@@ -20,8 +20,8 @@ class ProjectController{
             });
     }
     getProject (req, res) {
-        if (req.params.projectId) {
-            Project.findById(req.params.projectId)
+        if (req.query.projectId) {
+            Project.findById(req.query.projectId)
                 .then((project) => {
                     res.json(project);
                 })
@@ -40,7 +40,11 @@ class ProjectController{
         }
     }
     putProject (req, res) {
-        Project.findOneAndUpdate({}, req.body, {new: true})
+        Project.findOneAndUpdate(
+            { _id: req.query.projectId },
+            req.body,
+            { new: true }
+        )
         .then((project) => {
             res.json(project);
         })

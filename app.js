@@ -4,6 +4,11 @@ require('dotenv').config();
 //require('dotenv').config({path:"./.ENV"});
 const app = express();
 const port = 3000;
+app.all('*',function (req,res) {
+ res.header("Access-Control-Allow-Origin", "*");
+ res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+ res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+});
 console.log(process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Produccion');
 app.use(express.json());

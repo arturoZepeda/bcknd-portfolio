@@ -6,6 +6,6 @@ router.route('/:aboutId?')
   .get(aboutCont.getAbout)
   .post(aboutCont.postAbout)
   .put(aboutCont.putAbout)
-  .delete(aboutCont.deleteAbout)
+  .delete(aboutCont.deleteAbout);
 
-  module.exports = router;
+module.exports = router;

@@ -28,6 +28,12 @@ const experienceSchema = new Schema({
             required: 'Ingrese su habilidad'
         }
     ],
+    proyectos: [
+        {
+            type: String,
+            required: 'Ingrese su proyecto'
+        }
+    ],
     tecnologias: [
         {
             type: String,

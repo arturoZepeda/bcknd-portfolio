@@ -5,7 +5,7 @@ require('dotenv').config();
 //require('dotenv').config({path:"./.ENV"});
 const app = express();
 const port = 3000;
-app.use(cors());
+//app.use(cors());
 /*app.all('*',function (req,res) {
  res.header("Access-Control-Allow-Origin", "*");
  res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");

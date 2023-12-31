@@ -8,9 +8,10 @@ const About = mongoose.model('About', aboutSchema);
         this.req = req;
         this.res = res;
     }
-    postAbout (req, res) {                
+    postAbout (req, res) { 
         let newAbout = new About(req.body);
-        newAbout.save()
+        console.log(req.body);
+	    newAbout.save()
             .then((about) => {
                 res.json(about);
             })
